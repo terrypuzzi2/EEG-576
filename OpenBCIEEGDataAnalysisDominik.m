@@ -74,7 +74,7 @@ EEG= pop_runica(EEG, 'extended', 1); %use extended ICA
 EEG= pop_saveset(EEG,'filename', 'eeg_ica.set');
 
 EEG = pop_iclabel(EEG, 'default');
-EEG = pop_icflag(EEG, [NaN, NaN, 0.8, NaN, NaN, NaN, NaN]); % Retain only non-artifact ICs
+EEG = pop_icflag(EEG, [NaN, NaN, 0.8, NaN, NaN, NaN, NaN]); %Retain only non-artifact ICs
 
 %%How to use EEGLAB GUI for artifact rejection
 % 1. Go to Tools > Reject components by map.

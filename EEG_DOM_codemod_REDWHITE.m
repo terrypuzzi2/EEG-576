@@ -3,7 +3,8 @@ clear
 close all
 
 %% Root directory and file names
-%root = 'your_directory_path'; % Replace with your directory path
+directory=pwd;
+root=directory;
 files = {
     'BrainFlow-RAW_2024-11-07_13-12-16_0.csv',
     'BrainFlow-RAW_2024-11-07_13-12-16_1.csv',
