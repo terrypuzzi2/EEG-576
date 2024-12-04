@@ -1,8 +1,9 @@
 clc;
-clear all;
+clear;
+close all;
 
 % Load the data
-data = readtable('Red_2.csv'); % Replace with your file name
+data = readtable('Green_1.csv'); % Replace with your file name
 
 % Extract sample indices and EEG signals
 sampleIndex = table2array(data(4:end, 1)); % Sample indices

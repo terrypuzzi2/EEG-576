@@ -7,7 +7,7 @@ directory=pwd;
 root=directory;
 
 
-data = load ('BrainFlow-RAW_2024-11-14_13-17-10_6.csv');
+data = load ('Green_3.csv');
 sample_numbers = data(:,1); %time data
 eeg_data = data(:,2:9); %eeg data
 

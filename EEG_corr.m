@@ -1,9 +1,9 @@
-clc;
-clear all;
-
+% clc;
+%clear;
+close all;
 % Load the data
-data1 = readtable('Green_1.csv'); % Replace with your first file name
-data2 = readtable('Red_3.csv'); % Replace with your second file name
+data1 = readtable('Red_2.csv'); % Replace with your first file name
+data2 = readtable('Green_1.csv'); % Replace with your second file name
 
 % Extract EEG signals
 eegSignals1 = table2array(data1(4:end, 2:9)); % Columns 2-10: EEG signals from Green_1
@@ -30,8 +30,8 @@ combinedData1 = [segment1_1; segment2_1];
 combinedData2 = [segment1_2; segment2_2];
 
 % Design a bandpass filter for alpha waves (8-13 Hz)
-lowCutoff = 8; % Lower bound of alpha waves in Hz
-highCutoff = 13; % Upper bound of alpha waves in Hz
+lowCutoff = 4; % Lower bound of alpha waves in Hz
+highCutoff = 7; % Upper bound of alpha waves in Hz
 [b, a] = butter(4, [lowCutoff, highCutoff] / (fs / 2), 'bandpass'); % 4th-order Butterworth filter
 
 % Apply the bandpass filter to both datasets
@@ -43,7 +43,7 @@ filteredSignals2 = filtfilt(b, a, combinedData2);
 [psd2, ~] = pwelch(filteredSignals2, [], [], [], fs);
 
 % Select the alpha wave range (8-13 Hz)
-alphaRange = (f >= 8 & f <= 13);
+alphaRange = (f >= 4 & f <= 7);
 psd1Alpha = psd1(alphaRange, :); % PSD values in alpha range for all channels
 psd2Alpha = psd2(alphaRange, :); % PSD values in alpha range for all channels
 

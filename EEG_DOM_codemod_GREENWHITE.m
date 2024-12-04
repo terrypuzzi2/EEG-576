@@ -6,9 +6,9 @@ close all
 directory=pwd;
 root=directory;
 files = {
-    'BrainFlow-RAW_2024-11-14_13-17-10_4.csv',
-    'BrainFlow-RAW_2024-11-14_13-17-10_5.csv',
-    'BrainFlow-RAW_2024-11-14_13-17-10_6.csv'
+    'Green_1.csv',
+    'Green_2.csv',
+    'Green_3.csv'
 };
 
 % Sampling frequency
