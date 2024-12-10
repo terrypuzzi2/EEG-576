@@ -2,9 +2,9 @@ clc;
 clear;
 close all;
 
-newDataFile = 'Red_2_3.csv'; 
+newDataFile = 'Green_3_1.csv'; 
 channelsToCorrelate = [2, 4];
-newtimeInterval = [35, 45];
+newtimeInterval = [15, 25];
 
 %% Set parameters
 fs = 256; % Sampling frequency in Hz
