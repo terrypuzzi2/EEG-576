@@ -7,7 +7,7 @@ directory=pwd;
 root=directory;
 
 
-data = load ('Green_3.csv');
+data = load ('Green_2_2.csv');
 sample_numbers = data(:,1); %time data
 eeg_data = data(:,2:9); %eeg data
 
