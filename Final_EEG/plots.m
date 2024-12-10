@@ -13,7 +13,7 @@ highCutoff = 100; % Upper bound in Hz
 
 %% File names for the existing datasets
 fileNames = { 'Green_2_1.csv', 'Green_2_2.csv','Green_2_3.csv', ...
-              'Red_2_1.csv', 'Red_2_2.csv'};
+              'Red_2_1.csv', 'Red_2_2.csv', 'Red_2_3.csv'};
 
 %% Time intervals
 timeIntervals = {[15, 25], [35, 45]}; % Two time intervals in seconds
