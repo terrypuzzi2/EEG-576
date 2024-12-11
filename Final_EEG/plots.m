@@ -2,7 +2,7 @@ clc;
 clear;
 close all;
 
-newDataFile = 'Green_3_1.csv'; 
+newDataFile = 'Green_3_4.csv'; 
 channelsToCorrelate = [2, 4];
 newtimeInterval = [15, 25];
 
@@ -43,8 +43,9 @@ else
             data = readtable(fileNames{i});
             eegSignalsPreICA = table2array(data(4:end, [2:3, 6:9])); % EEG signals, 6 channels (skip 4 and 5)
             
+
             %% Perform ICA
-            [weights, sphere, ~, ~, ~, ~] = runica(eegSignalsPreICA', 'pca', 6); % Assuming 6 components
+            [weights, sphere, a, b, c, d] = runica(eegSignalsPreICA', 'pca', 6); % Assuming 6 components
             icaSignals = weights * eegSignalsPreICA'; % ICA decomposition, transposed for proper matrix multiplication
             
             % Store ICA data with more descriptive labels
@@ -162,7 +163,7 @@ for channelIdx = 1:length(channelsToCorrelate)
             existingPSD = processedData.(key).PSD;
 
             % Directly calculate correlation (no need to align lengths)
-            correlation = corr(newAlphaPSD, existingPSD, 'type', 'Pearson');
+            correlation = corr(newAlphaPSD, existingPSD, 'type', 'Kendall');
             correlationResults.(key) = correlation;
         end
     end
