@@ -2,7 +2,7 @@ clc;
 clear;
 close all;
 
-newDataFile = 'Green_3_4.csv'; 
+newDataFile = 'Test.csv'; 
 channelsToCorrelate = [2, 4];
 newtimeInterval = [15, 25];
 
